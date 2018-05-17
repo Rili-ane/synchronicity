@@ -1,8 +1,7 @@
 { "prefix" : "+",
   "onlinestatus": "away",
   "onlinemessage": "i'm stalking",
-  "username": "synchronicitie"
-  
+  "username": "synchronicitie",
  "requiredRoles": [
     "Palaiologid Dynasty",
     "Electors",
@@ -18,12 +17,6 @@
     "357230353057972224", 
     "336162690512715786", 
     "268018123687460864", 
-    "347554600087191553" 
- 
- 
+    "347554600087191553"
   ]
- 
- 
- 
- 
 }
