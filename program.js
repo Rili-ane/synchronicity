@@ -1,7 +1,5 @@
 //Libraries
 const Discord = require("discord.js");
-const ms = require("ms");
-const ontime = require('ontime')
 
 //The bot itself
 const client = new Discord.Client();
