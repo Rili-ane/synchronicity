@@ -38,5 +38,5 @@ client.on("message", async message => {
 });
 
 //gulag command
-if (command === "gulag")
+//if (command === "gulag")
 
