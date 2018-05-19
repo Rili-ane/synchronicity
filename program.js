@@ -62,8 +62,9 @@ client.on("message", async message => {
     if(member.roles.some(r=>(config.requiredRoles).includes(r.name)) )
       return message.reply("Sorry, i cant **gulag** this user");
     let gulag = message.guild.roles.find("name", "gulag");
-    let input = message.content.split(" ").slice(1);
-    let time = `${input}m`;
+    //let input = message.content.split(" ").slice(1);
+    //let time = `${input}m`;
+    let time = `1m`;
     //let time = `15m`; //params
     member.addRole(gulag).catch(console.error);
     message.channel.send({embed: {
