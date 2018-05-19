@@ -1,5 +1,8 @@
+'use_strict'
 //Libraries
 const Discord = require("discord.js");
+const ms = require("ms");
+const ontime = require('ontime');
 
 //The bot itself
 const client = new Discord.Client();
@@ -34,9 +37,60 @@ client.on("message", async message => {
   if(command === "ping"){
   const m = await message.channel.send("Ping?");
   m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
+  };
+
+  //say command
+  if(command === "say"){
+    //requiredRoles
+    if(!message.member.roles.some(r=>(config.requiredRoles).includes(r.name)) )
+      return ;
+    //Arguments
+    const sayMessage = args.join(" ");
+    //Delete command
+    message.delete().catch(O_o=>{});
+    //The bot sends the message
+    message.channel.send(sayMessage);
   }
-});
 
-//gulag command
-//if (command === "gulag")
+  //gulag command
+  if(command === "gulag"){
+    if(!message.member.roles.some(r=>(config.requiredRoles).includes(r.name)) )
+      return ;
+    let member = message.mentions.members.first();
+    if(!member)
+      return message.reply("Please specify a valid user");
+    if(member.roles.some(r=>(config.requiredRoles).includes(r.name)) )
+      return message.reply("Sorry, i cant **gulag** this user");
+    let gulag = message.guild.roles.find("name", "gulag");
+    let input = message.content.split(" ").slice(1);
+    if(!input){time = `60m`;}
+    else{let time = `${input}m`}
+    //let time = `15m`; //params
+    member.addRole(gulag).catch(console.error);
+    message.channel.send({embed: {
+      color: 3447003,
+      author: {
+        name: client.user.username,
+        icon_url: client.user.avatarURL
+      },
+      description: `<@${member.user.id}> you've been muted for ${ms(ms(time), {long: true})}`
+    }}).then(message => {
+      message.delete(120000)
+    });
+    setTimeout(() => {
+      member.removeRole(gulag);
+      message.channel.send({embed: {
+        color: 3447003,
+        author: {
+          name: client.user.username,
+          icon_url: client.user.avatarURL
+        },
+        description: `<@${member.user.id}> You were unmuted! The mute lasted: ${ms(ms(time), {long: true})}`
+      }}).then(message => {
+        message.delete(120000)
+      });
+     }, ms(time));
+  }
 
+
+});//End of the on.message event
