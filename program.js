@@ -63,9 +63,7 @@ client.on("message", async message => {
       return message.reply("Sorry, i cant **gulag** this user");
     let gulag = message.guild.roles.find("name", "gulag");
     let input = message.content.split(" ").slice(1);
-    var time;
-    if(!input)time = `60m`;
-    time = `${input}m`;
+    let time = `${input}m`;
     //let time = `15m`; //params
     member.addRole(gulag).catch(console.error);
     message.channel.send({embed: {
