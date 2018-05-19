@@ -95,3 +95,12 @@ client.on("message", async message => {
      }, ms(time));
   }
 });//End of the on.message event
+/*
+* TODO:
+    *Database
+    *add default timeout for gulag
+    *ungulag command
+    *improve the reddit post's system
+    *suggestion command for the #suggestions channel
+    *meme commands?
+*/
