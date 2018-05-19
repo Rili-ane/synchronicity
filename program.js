@@ -62,10 +62,7 @@ client.on("message", async message => {
     if(member.roles.some(r=>(config.requiredRoles).includes(r.name)) )
       return message.reply("Sorry, i cant **gulag** this user");
     let gulag = message.guild.roles.find("name", "gulag");
-    let input = message.content.split(" ").slice(1)
-      .catch(error => {
-        console.log(error);
-    });
+    let input = message.content.split(" ").slice(1)SS;
     let time = `${input}m`;
     //let time = `1m`;
     //let time = `15m`; //params
