@@ -91,6 +91,4 @@ client.on("message", async message => {
       });
      }, ms(time));
   }
-
-
 });//End of the on.message event
