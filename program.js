@@ -64,6 +64,8 @@ client.on("message", async message => {
     let gulag = message.guild.roles.find("name", "gulag");
     let input = message.content.split(" ").slice(1);
     let time = input[1];
+    if(!input)
+      return time = `1h`;
     //let time = `${conv}m`;
     //let time = `1m`;
     //let time = `15m`; //params
