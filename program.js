@@ -65,7 +65,7 @@ client.on("message", async message => {
     let input = message.content.split(" ").slice(1);
     var time;
     if(!input)time = `60m`;
-    time = `${input}m`}
+    time = `${input}m`;
     //let time = `15m`; //params
     member.addRole(gulag).catch(console.error);
     message.channel.send({embed: {
