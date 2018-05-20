@@ -102,14 +102,24 @@ client.on("message", async message => {
 
 //idk man 
 if(command === "water"){
-    //requiredRoles
     if(!message.member.roles.some(r=>(config.requiredRoles).includes(r.name)) )
       return ;
-    message.channel.send(`<@190969112359469057> has been doused in water`).then(message => {
-      message.delete(60000)
-  });
+    let member = message.mentions.members.first() || message.guild.members.get(args[0]);
+    if(!member)
+      return message.reply("Who are you trying to douse?");
+    message.delete().catch(O_o=>{});
+    message.channel.send({embed: {
+      color: 3447003,
+      author: {
+        name: client.user.username,
+        icon_url: client.user.avatarURL
+      },
+      //<@${member.user.id}>
+      description: `<@${member.user.id}> has been doused in water :sweat_drops: :sweat_drops: :sweat_drops:`
+    }}).then(message => {
+      message.delete(30000)
+    });
   }
-
 /*
 * TODO:
     *Database
