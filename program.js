@@ -62,6 +62,7 @@ client.on("message", async message => {
     if(member.roles.some(r=>(config.requiredRoles).includes(r.name)) )
       return message.reply("Sorry, i cant **gulag** this user");
     let gulag = message.guild.roles.find("name", "Stateless");
+    let citizens = message.guild.roles.find("name", "Citizens");
     let input = message.content.split(" ").slice(1);
     let time = input[1];
     if(!input)
@@ -70,6 +71,7 @@ client.on("message", async message => {
     //let time = `1m`;
     //let time = `15m`; //params
     member.addRole(gulag).catch(console.error);
+    member.removeRole(citizens);
     message.channel.send({embed: {
       color: 3447003,
       author: {
@@ -82,6 +84,7 @@ client.on("message", async message => {
     });
     setTimeout(() => {
       member.removeRole(gulag);
+      member.addRole(citizens);
       message.channel.send({embed: {
         color: 3447003,
         author: {
