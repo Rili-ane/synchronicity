@@ -16,7 +16,7 @@ const config = require("./config.json");
 client.on("ready", () => {
 console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
   //This changes the bot status, Playing : ""
-  client.user.setActivity(config.onlinemessage);
+  client.user.setActivity(config.onlinemessage, { type: "WATCHING" });
   //set username from the config.json
   client.user.setUsername(config.username);
 });
