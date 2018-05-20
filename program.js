@@ -97,10 +97,7 @@ client.on("message", async message => {
       });
      }, ms(time));
   }
-});//End of the on.message event
-
-
-//idk man 
+//idk
 if(command === "water"){
     if(!message.member.roles.some(r=>(config.requiredRoles).includes(r.name)) )
       return ;
@@ -120,6 +117,12 @@ if(command === "water"){
       message.delete(30000)
     });
   }
+
+});//End of the on.message event
+
+
+//idk man 
+
 /*
 * TODO:
     *Database
