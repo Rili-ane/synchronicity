@@ -97,7 +97,7 @@ client.on("message", async message => {
       });
      }, ms(time));
   }
-//idk
+//water command
 if(command === "water"){
     if(!message.member.roles.some(r=>(config.requiredRoles).includes(r.name)) )
       return ;
@@ -117,11 +117,22 @@ if(command === "water"){
       message.delete(30000)
     });
   }
-
-});//End of the on.message event
-
-
-//idk man 
+  if(command === "suggestion"){
+    const channel = client.channels.get('397887239784235019');
+    const suggestion = args.join(" ");
+    message.delete().catch(O_o=>{});
+    channel.send({embed: {
+      "title": `<@${member.user.id}> made a suggestion`,
+      "description": `${suggestion}`,
+      "color": Math.floor(Math.random() * (0xFFFFFF + 1)),
+      "timestamp": "",
+      "author": {
+        "name": message.author.name,
+        "icon_url": message.author.iconURL
+      }
+    }});
+  }
+});//End of the on.message event (End of the commands section) 
 
 /*
 * TODO:
