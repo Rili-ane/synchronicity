@@ -71,7 +71,7 @@ client.on("message", async message => {
     //let time = `1m`;
     //let time = `15m`; //params
     member.addRole(gulag).catch(console.error);
-    member.removeRole(citizens);
+    member.removeRole(citizens).catch(console.error);
     message.channel.send({embed: {
       color: 3447003,
       author: {
@@ -83,8 +83,8 @@ client.on("message", async message => {
       message.delete(120000)
     });
     setTimeout(() => {
-      member.removeRole(gulag);
-      member.addRole(citizens);
+      member.removeRole(gulag).catch(console.error);
+      member.addRole(citizens).catch(console.error);
       message.channel.send({embed: {
         color: 3447003,
         author: {
