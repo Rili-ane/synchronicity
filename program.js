@@ -133,8 +133,9 @@ if(command === "water"){
         "icon_url": message.author.avatarURL
       }
     }});
-    message.react(:thumbsup:);
-    message.react(:thumbsdown:);
+    message.react('👍');
+    message.react('👎');
+    message.react('❓');
   }
 });//End of the on.message event (End of the commands section) 
 
