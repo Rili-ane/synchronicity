@@ -98,6 +98,18 @@ client.on("message", async message => {
      }, ms(time));
   }
 });//End of the on.message event
+
+
+//idk man 
+if(command === "water"){
+    //requiredRoles
+    if(!message.member.roles.some(r=>(config.requiredRoles).includes(r.name)) )
+      return ;
+    message.channel.send(`<@190969112359469057> has been doused in water`).then(message => {
+      message.delete(60000)
+  });
+  }
+
 /*
 * TODO:
     *Database
