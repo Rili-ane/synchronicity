@@ -122,13 +122,13 @@ if(command === "water"){
     const suggestion = args.join(" ");
     message.delete().catch(O_o=>{});
     channel.send({embed: {
-      "title": `<@${message.author.id}> made a suggestion`,
+      "title": `${message.author.username} made a suggestion.`,
       "description": `${suggestion}`,
       "color": Math.floor(Math.random() * (0xFFFFFF + 1)),
       "timestamp": "",
       "author": {
-        "name": message.author.name,
-        "icon_url": message.author.iconURL
+        "name": message.author.username,
+        "icon_url": message.author.avatarURL
       }
     }});
   }
