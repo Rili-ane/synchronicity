@@ -118,6 +118,8 @@ if(command === "water"){
     });
   }
   if(command === "suggestion"){
+    const up = client.emojis.find("name", "thumbsup");
+    const down = client.emojis.find("name", "thumbsdown");
     const channel = client.channels.get('397887239784235019');
     const suggestion = args.join(" ");
     message.delete().catch(O_o=>{});
@@ -131,6 +133,8 @@ if(command === "water"){
         "icon_url": message.author.avatarURL
       }
     }});
+    message.react(up);
+    message.react(down);
   }
 });//End of the on.message event (End of the commands section) 
 
