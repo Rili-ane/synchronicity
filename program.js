@@ -61,7 +61,7 @@ client.on("message", async message => {
       return message.reply("Please specify a valid user");
     if(member.roles.some(r=>(config.requiredRoles).includes(r.name)) )
       return message.reply("Sorry, i cant **gulag** this user");
-    let gulag = message.guild.roles.find("name", "gulag");
+    let gulag = message.guild.roles.find("name", "Stateless");
     let input = message.content.split(" ").slice(1);
     let time = input[1];
     if(!input)
