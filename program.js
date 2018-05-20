@@ -98,6 +98,9 @@ client.on("message", async message => {
 /*
 * TODO:
     *Database
+* hi this tangyuan; can you make it so that the bot removes citizen role when adding gulag role, 
+and when removing gulag role adds citizen role? i tried just adding a member.removeRole(citizen); but citizen was orange for some
+reason aaa
     *add default timeout for gulag
     *ungulag command
     *improve the reddit post's system
