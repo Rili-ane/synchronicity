@@ -118,9 +118,9 @@ if(command === "water"){
     });
   }
   if(command === "suggestion"){
-    const up = client.emojis.find("name", "thumbsup");
-    const down = client.emojis.find("name", "thumbsdown");
-    const channel = client.channels.get('397887239784235019');
+    const voteup = client.emojis.find("name", "voteup");
+    const votedown = client.emojis.find("name", "votedown");
+    const channel = client.channels.get('288505237839282176');
     const suggestion = args.join(" ");
     message.delete().catch(O_o=>{});
     channel.send({embed: {
@@ -134,8 +134,8 @@ if(command === "water"){
       }
     }})
     .then(message => {
-    message.react('👍'),
-    message.react('👎'),
+    message.react(voteup),
+    message.react(votedown),
     message.react('❓')
     });}
 });//End of the on.message event (End of the commands section) 
