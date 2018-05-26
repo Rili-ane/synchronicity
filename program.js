@@ -140,7 +140,7 @@ if(command === "water"){
     });}
 });//End of the on.message event (End of the commands section)
 
-client.on("messageReactionAdd", async () => {
+client.on("messageReactionAdd", async reaction => {
   const message = reaction.message;
   if (reaction.emoji.name !== '⭐') return;
   if (message.author.id === user.id) return message.channel.send(`${user}, you cannot star your own messages.`);
