@@ -97,13 +97,21 @@ client.on("message", async message => {
       });
      }, ms(time));
   }
-//
+	
+//GE command
  if(command === "GE"){
 	const lub = client.emojis.find("name", "lub");
  	var GE_quotes = [`I'm not drunk`, `shitposting is legal when i'm around`, `${lub}`];
 	var quote_index = Math.floor(Math.random() * GE_quotes.length); 
     message.channel.send(GE_quotes[quote_index]).then(message => {
 
+      message.delete(60000)
+    });
+  }
+
+//test
+if(command === "test"){
+    message.channel.send(`:weary::ok_hand::kissing_heart::100::scream_cat::heart_eyes::weary::sweat_drops::drooling_face::fire:`).then(message => {
       message.delete(60000)
     });
   }
