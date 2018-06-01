@@ -97,6 +97,18 @@ client.on("message", async message => {
       });
      }, ms(time));
   }
+//
+ if(command === "GE"){
+	const lub = client.emojis.find("name", "lub");
+ 	var GE_quotes = [`I'm not drunk`, `shitposting is legal when i'm around`, `${lub}`];
+	var quote_index = Math.floor(Math.random() * GE_quotes.length); 
+    message.channel.send(GE_quotes[quote_index]).then(message => {
+
+      message.delete(60000)
+    });
+  }
+
+
 //water command
 if(command === "water"){
     if(!message.member.roles.some(r=>(config.requiredRoles).includes(r.name)) )
