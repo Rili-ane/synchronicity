@@ -128,7 +128,7 @@ client.on("message", async message => {
       console.log(`catUrl: ${obj.url}`);
       const embed = new Discord.RichEmbed()
 		    embed.setColor (Math.floor(Math.random() * (0xFFFFFF + 1)));
-        embed.setImage(`${obj.url}`);
+        embed.setImage(obj.url);
 	  message.channel.send({embed});
     }
 		cat();
