@@ -164,6 +164,7 @@ client.on("message", async message => {
   
   if(command === "owo"){
     if(message.channel.id != shitpostCh || cmdCh)
+      return;
     const msg = args.join(" ");
     if(!msg) return;
     async function owoify() {
