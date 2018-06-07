@@ -24,8 +24,8 @@ console.log(`Bot has started, with ${client.users.size} users, in ${client.chann
 });
 
 //This event will run on every single message received, from any channel or DM.
-const shitpostCh = client.channels.get('259644045402308608');
-const cmdCh = client.channels.get('312221928649654282');
+const shitpostCh = '259644045402308608';
+const cmdCh = '312221928649654282';
 function whitelist() {
   if(message.channel);
 }
@@ -165,17 +165,17 @@ client.on("message", async message => {
       lizzard();
     }
   
- // if(command === "owo"){
-  //  const msg = args.join(" ");
-  //  if(!msg) return;
-   // async function owoify() {
-    //  let owo = await neko.getSFWOwOify({text: `${msg}`});
-   //   console.log(owo);
-   //   message.channel.send(owo.owo || owo.msg)
-  //  }
-    
-//    owoify();
- // }
+  if(command === "owo"){
+    if(message.channel.id != shitpostCh || cmdCh)
+    const msg = args.join(" ");
+    if(!msg) return;
+    async function owoify() {
+      let owo = await neko.getSFWOwOify({text: `${msg}`});
+      console.log(owo);
+      message.channel.send(owo.owo || owo.msg)
+    }   
+    owoify();
+  }
 
   if(command === "suggestion"){
     const voteup = client.emojis.find("name", "voteup");
