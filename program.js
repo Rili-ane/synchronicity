@@ -125,7 +125,7 @@ client.on("message", async message => {
     function cat() {
       let obj = neko.getSFWMeow();
       const embed = new Discord.RichEmbed()
-		    embed.setColorMath.floor(Math.random() * (0xFFFFFF + 1));
+		    embed.setColor (Math.floor(Math.random() * (0xFFFFFF + 1)));
         embed.setImage(`${obj.url}`);
 	  message.channel.send({embed});
     }
