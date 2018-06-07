@@ -163,8 +163,7 @@ client.on("message", async message => {
     }
   
   if(command === "owo"){
-    if(message.channel.id != '259644045402308608' || '312221928649654282')
-    return;
+    if(message.channel.id === '259644045402308608' || '312221928649654282'){
     //if(message.channel.id !== '259644045402308608' || '312221928649654282')
       //return;
     const msg = args.join(" ");
@@ -174,6 +173,7 @@ client.on("message", async message => {
       message.channel.send(owo.owo || owo.msg || `wats dis?`)
     }   
     owoify();
+  }
   }
 
   if(command === "suggestion"){
