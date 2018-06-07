@@ -26,6 +26,12 @@ console.log(`Bot has started, with ${client.users.size} users, in ${client.chann
 //This event will run on every single message received, from any channel or DM.
 const shitpostCh = '259644045402308608';
 const cmdCh = '312221928649654282';
+function whitelist() {
+  if(message.channel.id !== '259644045402308608')
+    return;
+  if(message.channel.id !== '312221928649654282')
+    return;
+}
 client.on("message", async message => {
   //To prevent botception
   if(message.author.bot) return;
@@ -162,19 +168,16 @@ client.on("message", async message => {
       lizzard();
     }
   
-  //if(command === "owo"){
-  //  if(message.channel.id === '259644045402308608' || '312221928649654282'){
-  //  //if(message.channel.id !== '259644045402308608' || '312221928649654282')
-  //    //return;
-  //  const msg = args.join(" ");
-  //  async function owoify() {
-  //    let owo = await neko.getSFWOwOify({text: `${msg}`});
-  //    console.log(owo);
-  //    message.channel.send(owo.owo || owo.msg || `wats dis?`)
-  //  }   
-  //  owoify();
-  //}
-  //}
+  if(command === "owo"){
+    whitelist();
+    const msg = args.join(" ");
+    async function owoify() {
+      let owo = await neko.getSFWOwOify({text: `${msg}`});
+      console.log(owo);
+      message.channel.send(owo.owo || owo.msg || `wats dis?`)
+    }   
+    owoify();
+  }
 
   if(command === "suggestion"){
     const voteup = client.emojis.find("name", "voteup");
