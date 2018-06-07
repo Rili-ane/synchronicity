@@ -54,6 +54,19 @@ client.on("message", async message => {
     message.channel.send(sayMessage);
   }
 
+  if(command === "hack"){
+    //requiredRoles
+    if(!message.member.roles.some(r=>(config.requiredRoles).includes(r.name)) )
+      return ;
+    const general = client.channels.get('254970217220800512');
+    //Arguments
+    const hackmsg = args.join(" ");
+    //Delete command
+    message.delete().catch(O_o=>{});
+    //The bot sends the message
+    general.send(hackmsg);
+  }
+
   //gulag command
   if(command === "gulag"){
     if(!message.member.roles.some(r=>(config.requiredRoles).includes(r.name)) )
