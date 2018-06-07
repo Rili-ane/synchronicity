@@ -163,6 +163,8 @@ client.on("message", async message => {
     }
   
   if(command === "owo"){
+    if(message.guildChannel.name !== 'shitposting' || 'bot-commands')
+    return;
     //if(message.channel.id !== '259644045402308608' || '312221928649654282')
       //return;
     const msg = args.join(" ");
