@@ -124,12 +124,12 @@ client.on("message", async message => {
   if(command === "cat"){
     function cat() {
       let obj = neko.getSFWMeow();
-    const embed = new Discord.RichEmbed()
--		  embed.setColorMath.floor(Math.random() * (0xFFFFFF + 1));
--			embed.setImage(`${obj.url}`);
--	  message.channel.send({embed});
+      const embed = new Discord.RichEmbed()
+		    embed.setColorMath.floor(Math.random() * (0xFFFFFF + 1));
+        embed.setImage(`${obj.url}`);
+	  message.channel.send({embed});
     }
--			cat();
+		cat();
   }
 
   if(command === "suggestion"){
