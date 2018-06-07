@@ -123,7 +123,7 @@ client.on("message", async message => {
 
   if(command === "cat"){
     async function cat() {
-      let obj = neko.getSFWMeow();
+      let obj = await neko.getSFWMeow();
       console.log(`cat: ${obj}`)
       console.log(`catUrl: ${obj.url}`);
       const embed = new Discord.RichEmbed()
