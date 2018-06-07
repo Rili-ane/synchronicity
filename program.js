@@ -26,9 +26,6 @@ console.log(`Bot has started, with ${client.users.size} users, in ${client.chann
 //This event will run on every single message received, from any channel or DM.
 const shitpostCh = '259644045402308608';
 const cmdCh = '312221928649654282';
-function whitelist() {
-  if(message.channel);
-}
 client.on("message", async message => {
   //To prevent botception
   if(message.author.bot) return;
