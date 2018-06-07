@@ -3,6 +3,8 @@
 const Discord = require("discord.js");
 const ms = require("ms");
 const ontime = require('ontime');
+const client = require('nekos.life');
+const neko = new client();
 
 //The bot itself
 const client = new Discord.Client();
@@ -118,6 +120,18 @@ client.on("message", async message => {
       message.delete(30000)
     });
   }
+
+  if(command === "cat"){
+    function cat() {
+      let obj = neko.getSFWMeow();
+    const embed = new Discord.RichEmbed()
+-		  embed.setColorMath.floor(Math.random() * (0xFFFFFF + 1));
+-			embed.setImage(`${obj.url}`);
+-	  message.channel.send({embed});
+    }
+-			cat();
+  }
+
   if(command === "suggestion"){
     const voteup = client.emojis.find("name", "voteup");
     const votedown = client.emojis.find("name", "votedown");
