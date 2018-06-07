@@ -37,9 +37,9 @@ client.on("message", async message => {
   
   //Whitelist check
   function whitelist() {
-  if(message.channel.id === `259644045402308608`)
+  if(message.channel.id !== `259644045402308608`)
     return;
-  if(message.channel.id === `312221928649654282`)
+  if(message.channel.id !== `312221928649654282`)
     return;
   }
 
