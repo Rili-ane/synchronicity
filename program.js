@@ -124,6 +124,7 @@ client.on("message", async message => {
   if(command === "cat"){
     function cat() {
       let obj = neko.getSFWMeow();
+      console.log(`cat: ${obj.url}`);
       const embed = new Discord.RichEmbed()
 		    embed.setColor (Math.floor(Math.random() * (0xFFFFFF + 1)));
         embed.setImage(`${obj.url}`);
