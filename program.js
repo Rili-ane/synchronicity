@@ -147,16 +147,16 @@ client.on("message", async message => {
 		cat();
   }
 
-  if(command === "owo"){
-    const msg = args.join(" ");
-    async function owoify() {
-      let owo = await neko.getSFWOwOify({text: `${msg}`});
-      console.log(owo);
-      message.channel.send(owo.owo || owo.msg)
-    }
+ // if(command === "owo"){
+  //  const msg = args.join(" ");
+   // async function owoify() {
+    //  let owo = await neko.getSFWOwOify({text: `${msg}`});
+   //   console.log(owo);
+   //   message.channel.send(owo.owo || owo.msg)
+  //  }
     
-    owoify();
-  }
+//    owoify();
+ // }
 
   if(command === "suggestion"){
     const voteup = client.emojis.find("name", "voteup");
