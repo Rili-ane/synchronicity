@@ -163,13 +163,13 @@ client.on("message", async message => {
     }
   
   if(command === "owo"){
-    if(message.channel.id !== 259644045402308608 || 312221928649654282)
+    if(message.channel.id !== '259644045402308608' || '312221928649654282')
       return;
     const msg = args.join(" ");
     async function owoify() {
       let owo = await neko.getSFWOwOify({text: `${msg}`});
       console.log(owo);
-      message.channel.send(owo.owo || owo.msg)
+      message.channel.send(owo.owo || owo.msg || `wats dis?`)
     }   
     owoify();
   }
