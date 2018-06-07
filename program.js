@@ -26,12 +26,6 @@ console.log(`Bot has started, with ${client.users.size} users, in ${client.chann
 //This event will run on every single message received, from any channel or DM.
 const shitpostCh = '259644045402308608';
 const cmdCh = '312221928649654282';
-function whitelist() {
-  if(message.channel.id !== '259644045402308608')
-    return;
-  if(message.channel.id !== '312221928649654282')
-    return;
-}
 client.on("message", async message => {
   //To prevent botception
   if(message.author.bot) return;
@@ -40,7 +34,15 @@ client.on("message", async message => {
   //Separate command name and arguments
   const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
 	const command = args.shift().toLowerCase();
-	
+  
+  //Whitelist check
+  function whitelist() {
+  if(message.channel.id !== '259644045402308608')
+    return;
+  if(message.channel.id !== '312221928649654282')
+    return;
+  }
+
 	//COMMANDS
 
   //ping command  
