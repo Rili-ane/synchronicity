@@ -134,6 +134,17 @@ client.on("message", async message => {
 		cat();
   }
 
+  if(command === "owo"){
+    const msg = args.join(" ");
+    async function owoify() {
+      let owo = await neko.getSFWOwOify({text: `${msg}`});
+      console.log(owo);
+      message.channel.send(owo)
+    }
+    
+    owoify();
+  }
+
   if(command === "suggestion"){
     const voteup = client.emojis.find("name", "voteup");
     const votedown = client.emojis.find("name", "votedown");
