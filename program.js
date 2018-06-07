@@ -24,6 +24,11 @@ console.log(`Bot has started, with ${client.users.size} users, in ${client.chann
 });
 
 //This event will run on every single message received, from any channel or DM.
+const shitpostCh = client.channels.get('259644045402308608');
+const cmdCh = client.channels.get('312221928649654282');
+function whitelist() {
+  if(message.channel);
+}
 client.on("message", async message => {
   //To prevent botception
   if(message.author.bot) return;
@@ -133,22 +138,36 @@ client.on("message", async message => {
       message.delete(30000)
     });
   }
-
-  if(command === "cat"){
-    async function cat() {
-      let obj = await neko.getSFWMeow();
-      console.log(`cat: ${obj}`)
-      console.log(`catUrl: ${obj.url}`);
-      const embed = new Discord.RichEmbed()
-		    embed.setColor (Math.floor(Math.random() * (0xFFFFFF + 1)));
-        embed.setImage(obj.url);
-	  message.channel.send({embed});
+  
+    if(command === "cat"){
+      async function cat() {
+        let obj = await neko.getSFWMeow();
+        console.log(`cat: ${obj}`)
+        console.log(`catUrl: ${obj.url}`);
+        const embed = new Discord.RichEmbed()
+          embed.setColor (Math.floor(Math.random() * (0xFFFFFF + 1)));
+          embed.setImage(obj.url);
+      message.channel.send({embed});
+      }
+      cat();
     }
-		cat();
-  }
-
+  
+    if(command === "lizzard"){
+      async function lizzard() {
+        let obj = await neko.getSFWLizard();
+        console.log(`lizzard: ${obj}`)
+        console.log(`lizzardUrl: ${obj.url}`);
+        const embed = new Discord.RichEmbed()
+          embed.setColor (Math.floor(Math.random() * (0xFFFFFF + 1)));
+          embed.setImage(obj.url);
+      message.channel.send({embed});
+      }
+      lizzard();
+    }
+  
  // if(command === "owo"){
   //  const msg = args.join(" ");
+  //  if(!msg) return;
    // async function owoify() {
     //  let owo = await neko.getSFWOwOify({text: `${msg}`});
    //   console.log(owo);
