@@ -139,7 +139,7 @@ client.on("message", async message => {
     async function owoify() {
       let owo = await neko.getSFWOwOify({text: `${msg}`});
       console.log(owo);
-      message.channel.send(owo.owo)
+      message.channel.send(owo.owo || owo.msg)
     }
     
     owoify();
