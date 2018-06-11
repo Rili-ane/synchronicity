@@ -202,4 +202,4 @@ client.on("message", async message => {
     message.react(votedown),
     message.react('❓')
     });}
-});//End of the on.message event (End of the commands section)
+});//End of the on.message event (End of the commands section) 
