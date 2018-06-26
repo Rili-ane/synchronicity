@@ -156,6 +156,76 @@ client.on("message", async message => {
       }
       cat();
     }
+  if(command == "lurker")
+  {
+	
+	if(!message.member.roles.some(r=>(config.requiredRoles).includes(r.name)) )
+      return ;
+	
+ 	var potential_lurkers = [];
+	const current_date = Date.now();
+	const timeToCountAsLurker = 604800000; //default 1 week
+	const general = client.channels.get('432021421716275220');
+	
+
+	var user_count = 0;
+	
+	var user_array = client.users.array();
+	var u = 1;
+	
+
+	//for all users
+	for(u = 1; u < user_array.length; u++)
+	{
+		
+		//get the last message sent
+		
+		
+		
+		var lastUserMessage = user_array[u].lastMessage;
+		
+		//add them to the list if they have never sent a message
+		if(lastUserMessage == undefined)
+		{
+			potential_lurkers.push(user_array[u]);
+			user_count++;
+		}
+		
+		//add them if its been a week since their last message
+		else
+		{
+			if( (current_date - lastUserMessage.createdAt) > timeToCountAsLurker)
+			{
+				potential_lurkers.push(user_array[u]);
+				user_count++;
+			}
+				
+		}	
+	}
+	
+	
+	//if we have no lurkers, doubt this will ever happen but what the hell
+	message.channel.send(`${user_count} potential lurkers`);
+	if(potential_lurkers.length == 0)
+	{
+		 message.channel.send(`No Lurkers, checked ${user_count} users`);
+		  //Cooldown
+		talkedRecently.add(message.author.id);
+	}
+	
+	else
+	{
+		
+		
+		
+		var chosen_lurker = potential_lurkers[Math.floor(Math.random() * potential_lurkers.length)];
+		
+		message.channel.send(`LURKER ${chosen_lurker}! REVEAL THYSELF, KNAVE`);
+		
+		 //Cooldown
+		talkedRecently.add(message.author.id);
+	}
+	
   
     if(command === "lizzard"){
       async function lizzard() {
