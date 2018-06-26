@@ -225,6 +225,8 @@ client.on("message", async message => {
 		 //Cooldown
 		talkedRecently.add(message.author.id);
 	}
+  }
+	
 	
   
     if(command === "lizzard"){
