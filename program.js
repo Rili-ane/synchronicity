@@ -156,6 +156,18 @@ client.on("message", async message => {
       }
       cat();
     }
+	
+  if(command === "autumn"){
+    // const tang = client.emojis.find("name", "frogyuan");
+	
+	var autumn_quotes = [`resistance is futile https://i.imgur.com/HTGNEaf.gif`]
+	var quote_index = math.floor(Math.random() * autumn_quotes.length);
+	
+    message.channel.send(autumn_quotes[quote_index]);
+  }
+
+  
+	
   if(command == "lurker")
   {
 	
@@ -222,8 +234,7 @@ client.on("message", async message => {
 		
 		message.channel.send(`LURKER ${chosen_lurker}! REVEAL THYSELF, KNAVE`);
 		
-		 //Cooldown
-		talkedRecently.add(message.author.id);
+	
 	}
   }
 	
